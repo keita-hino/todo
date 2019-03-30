@@ -1,4 +1,4 @@
 test:
   adapter: mysql2
   database: travis_ci_test
-  username: mysql2
+  username: root
