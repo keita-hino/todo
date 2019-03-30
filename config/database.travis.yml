@@ -1,4 +1,4 @@
 test:
-  adapter: mysql2
+  adapter: postgresql
   database: travis_ci_test
-  username: root
+  username: postgres
