@@ -36,6 +36,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    debugger
+    @task = Task.find(params[:id])
+    if @task.destroy
+      flash[:danger] = "タスクを削除しました"
+      redirect_to root_path
+    else
+      render 'show'
+    end
+  end
+
   private
 
     def task_params
