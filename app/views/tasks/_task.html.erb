@@ -1,8 +1,9 @@
 <%= task.label :"タスク名" %>
-<%= task.text_field :task_name, class: 'task.rm-control' %>
+<%= task.text_field :task_name, class: 'form-control' %>
 
-<%= task.label :"ステータス" %>
-<%= task.text_field :completed, class: 'task.rm-control' %>
+<%= task.label :"ステータス" %><br>
+<%= task.radio_button :completed, :false, label: "設定1",class:'form_date_select'%>未完了
+<%= task.radio_button :completed, :true, label: "設定1",class:'form_date_select'%>完了<br><br>
 
 <%= task.label :"期限" %>
-<%= task.text_field :due_date, class: 'task.rm-control' %>
+<%= task.text_field :due_date,autocomplete: 'off', class: 'form-control date-picker' %>
