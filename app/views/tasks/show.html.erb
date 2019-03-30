@@ -14,6 +14,7 @@
       <%= f.text_field :due_date, class: 'form-control',readonly:true %>
 
       <%= link_to "編集", edit_task_path(@task.id) ,class:"btn btn-primary" %>
+      <%= link_to "削除", task_path(@task.id) ,method: :delete,class:"btn btn-danger pull-right" %>
 
     <% end %>
   </div>

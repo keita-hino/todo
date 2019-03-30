@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'tasks#index'
   post '/tasks/:id' => 'tasks#update'
-  resources :tasks, only: [:show,:index,:new,:create,:edit,:update]
+  resources :tasks, only: [:show,:index,:new,:create,:edit,:update,:destroy]
   post '/add' => 'slackbot#add'
   post '/complete' => 'slackbot#complete'
   post '/delete' => 'slackbot#delete'
