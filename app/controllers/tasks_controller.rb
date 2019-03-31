@@ -37,7 +37,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    debugger
     @task = Task.find(params[:id])
     if @task.destroy
       flash[:danger] = "タスクを削除しました"
