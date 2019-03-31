@@ -1,3 +1,20 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+
+ *= require jquery-ui/datepicker
+ *= require_tree .
+ *= require_self
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -152,4 +169,35 @@ input {
 
 .text-center {
   text-align: center;
+}
+
+.form_date_select {
+    display: inline-block;
+    width: auto;
+}
+
+.field .radio_btn {
+  display: none;
+}
+
+// チェックが入っていないとき
+.field .radio_btn + label {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  color: #888;
+  border: solid 1px #EDBC6C;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 3px 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+// チェックが入ったとき
+.field .radio_btn:checked + label {
+  color: #fff;
+  background-color: #EDBC6C;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }

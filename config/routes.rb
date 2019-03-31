@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'tasks#index'
-  post '/tasks/:id' => 'tasks#update'
-  resources :tasks, only: [:show,:index,:new,:create,:edit,:update,:destroy]
+  resources :tasks, only: [:show,:index,:new,:create,:edit,:update,:destroy] do
+    collection do
+      # 今後ルートを追加する場合は下記に
+    end
+  end
   post '/add' => 'slackbot#add'
   post '/complete' => 'slackbot#complete'
   post '/delete' => 'slackbot#delete'
