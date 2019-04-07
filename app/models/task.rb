@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
+  validates :task_name,presence: true,length:{maximum: 255}
   acts_as_paranoid
+
   def self.today_create_task
     Task.where(created_at: Time.now.midnight..(Time.now.midnight + 1.day - 1))
   end

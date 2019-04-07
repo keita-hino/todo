@@ -3,6 +3,25 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   let(:today) {Time.now.midnight}
   let(:user_id) {'U999999'}
+  describe 'バリデーション' do
+    describe 'task_name' do
+      describe '必須チェック' do
+        it '未入力エラーを返す' do
+          task = FactoryBot.build(:task)
+          task.task_name = nil
+          expect(task).not_to be_valid
+        end
+      end
+      describe '文字数チェック' do
+        it '文字数超過時エラーを返す' do
+          task = FactoryBot.build(:task)
+          task.task_name = "a" * 256
+          expect(task).not_to be_valid
+        end
+      end
+    end
+  end
+
   describe '#today_create_task' do
     it 'タスクリストを作成して返す' do
       FactoryBot.create(:task,created_at:today)
